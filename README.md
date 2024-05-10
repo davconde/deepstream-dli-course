@@ -2,7 +2,7 @@
 Running the official NVIDIA Deep Learning Institute DeepStream course without any Jetson.
 
 ## Setup
-Download the official Docker container for DeepStream 7.0:
+Download the official Docker image for DeepStream 7.0:
 ```bash
 sudo docker pull nvcr.io/nvidia/deepstream:7.0-triton-multiarch
 ```
