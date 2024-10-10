@@ -24,6 +24,15 @@ Install the additional Python based applications:
 ./user_deepstream_python_apps_install.sh --version 1.1.11
 ```
 
+## Running Jupyter in Visual Studio Code
+
+In Visual Studio Code install the Docker extension, then in the Docker sidebar right click on the executing container and select `Attach Visual Studio Code`.
+In the new window connected to the remote, install both the Python and Jupyter extensions as local extensions, which will manage the Jupyter kernel lifecycle.
+
+## Running Jupyter in web browser
+
+Although Visual Studio Code is recommended for easier code edition during this course, Jupyter notebooks can be edited in a web browser.
+
 Install the Jupyter runtime and webservice, then launch it:
 ```bash
 pip install jupyterlab
@@ -31,7 +40,20 @@ pip install notebook
 jupyter notebook --allow-root
 ```
 
-Enjoy the course! When running tests that display image, open VLC and in `Media>Open Network Stream...` introduce:
+To access the Jupyter web view without forwarding the Jupyter port and using a browser in host, install one in the container.
+For this, open a new terminal instance, get the container ID with `docker ps`, and attach it with `docker attach <container-id>`. Then run:
+```bash
+add-apt-repository -y ppa:savoury1/chromium
+apt update
+apt install -y chromium-browser
+chromium-browser --no-sandbox
+```
+
+In the web browser, enter the URL indicated by the Jupyter server console output.
+
+## Video output
+
+When running tests that display image, open VLC and in `Media>Open Network Stream...` introduce:
 ```shell
 rtsp://localhost:8554/ds-test
 ```
